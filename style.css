@@ -1,0 +1,105 @@
+:root {
+  --bg-color-main: rgba(0, 0, 0, .9);
+  --bg-color-dark: #333333;
+  --bg-color-light: #f4f4f4;
+  --font-color-dark: #333333;
+  --font-color-light: #ffffff;
+}
+
+body {
+  background: var(--bg-color-main);
+  margin: 0;
+  color: var(--font-color-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+  padding: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+.showcase::after {
+  content: '';
+  background-image: url(./img/sf.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(10px);
+  transition: 1s;
+}
+
+.logo {
+  position: absolute;
+  width: 600px;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 30px;
+  margin-left: -300px;
+}
+
+.showcase:hover::after {
+  filter: blur(3px);
+}
+
+.container {
+  max-width: 75%;
+  margin: auto;
+  padding: 4rem 1rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.feature {
+  margin: 20px;
+}
+
+.bg-light {
+  background: var(--bg-color-light);
+  color: var(--font-color-dark);
+}
+
+.bg-dark {
+  background: var(--bg-color-dark);
+  color: var(--font-color-light);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+@media(max-width: 600px) {
+  .showcase::after {
+    height: 50vh;
+  }
+
+  .logo {
+    top: 0;
+    width: 300px;
+    margin-left: -150px;
+  }
+
+  .grid-3,
+  .grid-2 {
+    display: block;
+  }
+
+  .feature {
+    margin: 40px 0;
+  }
+}
