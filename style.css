@@ -4,6 +4,7 @@
   --bg-color-light: #f4f4f4;
   --font-color-dark: #333333;
   --font-color-light: #ffffff;
+  --font-color-second: #0b9d84;
 }
 
 body {
@@ -17,39 +18,116 @@ footer {
   padding: 1em;
 }
 
+button {
+  border: 2px solid var(--font-color-second);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--font-color-second);
+  cursor: pointer;
+  outline: none;
+  transition: 0.4s;
+}
+
+button:hover {
+  background: var(--font-color-second);
+  color: var(--font-color-light);
+}
+
+button:hover a {
+  color: var(--font-color-light);
+}
+
+h3 {
+  color: var(--font-color-second);
+}
+
 p {
   margin: 0;
 }
 
-.showcase::after {
-  content: '';
-  background-image: url(./img/sf.jpg);
+a {
+  text-decoration: none;
+  color: var(--font-color-second);
+}
+
+.showcase {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: block;
-  filter: blur(10px);
-  transition: 1s;
 }
 
-.logo {
+.slide {
   position: absolute;
-  width: 600px;
-  z-index: 1;
-  top: 10%;
-  left: 50%;
-  margin-top: 30px;
-  margin-left: -300px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  opacity: 0;
+  transition: 0.4s;
 }
 
-.showcase:hover::after {
-  filter: blur(3px);
+.slide:nth-child(1) {
+  background: url("./img/sf.jpg") no-repeat center top/cover;
+}
+
+.slide:nth-child(2) {
+  background: url("./img/park.jpg") no-repeat center top/cover;
+}
+
+.slide:nth-child(3) {
+  background: url("./img/toll.jpg") no-repeat center top/cover;
+}
+
+.slide:nth-child(4) {
+  background: url("./img/ls.jpg") no-repeat center top/cover;
+}
+
+.slide:nth-child(5) {
+  background: url("./img/dealer.jpg") no-repeat center top/cover;
+}
+
+.current {
+  opacity: 1;
+}
+
+.logo-buttons {
+  position: absolute;
+  left: 8%;
+}
+
+.main-buttons {
+  position: relative;
+  bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main-buttons button {
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.slide-buttons button {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+#prev {
+  left: 25px;
+}
+
+#next {
+  right: 25px;
 }
 
 .container {
-  max-width: 75%;
+  width: 75%;
   margin: auto;
   padding: 4rem 1rem;
 }
@@ -84,19 +162,20 @@ p {
 }
 
 @media(max-width: 600px) {
-  .showcase::after {
+  .grid-3,
+  .grid-2 {
+    display: block;
+  }
+}
+
+@media(max-width: 900px) {
+  .showcase {
     height: 50vh;
   }
 
   .logo {
     top: 0;
     width: 300px;
-    margin-left: -150px;
-  }
-
-  .grid-3,
-  .grid-2 {
-    display: block;
   }
 
   .feature {

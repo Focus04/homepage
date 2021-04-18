@@ -10,10 +10,45 @@
 </head>
 <body>
   <header class="showcase">
-    <img src="./img/banner.png" class="logo">
+    <div class="slides">
+      <div class="slide current"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+    <div class="logo-buttons container center">
+      <img src="./img/banner.png" class="logo">
+      <div class="main-buttons container center grid-3">
+        <div>
+          <button>
+            <a href="samp://89.40.4.118:7777">Join Server</a>
+          </button>
+        </div>
+        <div>
+          <button>
+            <a href="samp://89.40.4.118:7777">Join Server</a>
+          </button>
+        </div>
+        <div>
+          <button>
+            <a href="samp://89.40.4.118:7777">Join Server</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-buttons">
+      <button id="prev">
+        <i class="fas fa-arrow-left fa-2x"></i>
+      </button>
+      <button id="next">
+        <i class="fas fa-arrow-right fa-2x"></i>
+      </button>
+    </div>
   </header>
 
-  <section class="features">
+  <section>
     <div class="container grid-3 center">
       <div class="feature">
         <i class="fas fa-sitemap fa-3x"></i>
@@ -33,13 +68,11 @@
     </div>
   </section>
 
-  <section class="about bg-light">
+  <section class="bg-light">
     <div class="container grid-2">
-      <div class="icon">
-        <i class="fas fa-user-shield fa-10x"></i>
-      </div>
-      <div class="about">
-        <h3>About</h3>
+      <i class="fas fa-user-shield fa-10x"></i>
+      <div>
+        <h3>About The Staff Team</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, optio sit. Ex porro dolorum hic quo laboriosam? Omnis ducimus ipsam reprehenderit, consectetur sunt sapiente nesciunt voluptatum. Vitae enim nostrum itaque, cupiditate, ducimus cum dolores quidem, id excepturi adipisci possimus repellat!</p>
       </div>
     </div>
@@ -48,5 +81,7 @@
   <footer class="center bg-dark">
     <p>Relentless Gaming &copy; 2021</p>
   </footer>
+
+  <script src="./index.js"></script>
 </body>
 </html>
