@@ -128,6 +128,29 @@ a {
   padding: 3px;
 }
 
+.slide-circles {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background: var(--color-light);
+  border-radius: 50%;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.current-circle {
+  background: var(--color-second);
+}
+
 #prev {
   left: 25px;
 }
