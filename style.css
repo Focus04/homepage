@@ -330,8 +330,12 @@ span {
     display: block;
   }
 
+  .icon {
+    margin-bottom: 4rem;
+  }
+
   .feature {
-    margin: 40px 0;
+    margin: 4rem 0;
   }
 }
 
