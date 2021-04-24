@@ -2,6 +2,7 @@ const slides = document.querySelectorAll('.slide');
 const circles = document.querySelectorAll('.circle');
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
+const show = document.querySelector('#show');
 
 const nextSlide = () => {
   const current = document.querySelector('.current');
@@ -55,3 +56,13 @@ circles.forEach((circle) => {
   });
 });
 slideInterval = setInterval(nextSlide, 10000);
+show.addEventListener('click', () => {
+  const table = document.querySelector('.table');
+  if (show.innerHTML === 'Show') {
+    table.style.display = 'block';
+    show.innerHTML = 'Hide';
+  } else {
+    table.style.display = 'none';
+    show.innerHTML = 'Show';
+  }
+});

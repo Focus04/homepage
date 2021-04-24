@@ -5,7 +5,7 @@
   --color-light: #f4f4f4;
   --color-second: #0b9d84;
   --color-second-light: #00ffd5;
-  --color-second-dark: #1d5e52;
+  --color-second-dark: #2c7a6d;
   --color-second-bg: #b7dbd5;
 }
 
@@ -18,6 +18,9 @@ body {
 
 section {
   position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
 }
 
 footer {
@@ -27,22 +30,13 @@ footer {
 }
 
 button {
-  border: 2px solid var(--color-second);
   border-radius: 10px;
   background: transparent;
-  color: var(--color-second);
   cursor: pointer;
   outline: none;
   transition: .4s;
-}
-
-button:hover {
-  background: rgba(0, 255, 213, .2);
-  color: var(--color-light);
-}
-
-button:hover a {
-  color: var(--color-light);
+  border: 2px solid var(--color-second);
+  color: var(--color-second);
 }
 
 h3 {
@@ -59,20 +53,22 @@ a {
 }
 
 iframe {
-  width: 100%;
+  width: 75%;
+  margin: auto;
   border-radius: 10px;
   color: var(--color-light);
   font-size: .9em;
   box-shadow: 0 0 10px var(--color-main);
+  display: none;
+  transition: 0.4s;
 }
 
 span {
   color: var(--color-second-light);
 }
 
-.skewed span {
+.description span {
   color: var(--color-second);
-  cursor: pointer;
 }
 
 .showcase {
@@ -142,16 +138,49 @@ span {
 }
 
 .main-buttons button,
-.skewed-2 button {
+.container button {
+  position: relative;
+  z-index: 1;
   padding: .5em;
   margin: 1rem;
   font-weight: 600;
   font-size: medium;
 }
 
-.skewed-2 button {
+.container button {
   width: 100%;
-  margin: 1rem 0;
+  margin: 2rem 0;
+  border-color: var(--color-second-dark);
+  color: var(--color-second-dark);
+}
+
+.showcase button:hover {
+  background: rgba(0, 255, 213, .1);
+  color: var(--color-light);
+}
+
+.container button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 122, 109, .2);
+  border-radius: 7px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .4s ease-in;
+}
+
+.container button:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.container button:hover {
+  color: var(--color-dark);
 }
 
 .slide-buttons button {
@@ -209,6 +238,11 @@ span {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.icon {
+  display: grid;
+  place-items: center;
+}
+
 .feature {
   margin: 1rem;
 }
@@ -241,7 +275,6 @@ span {
   transform: skew(0deg, -5deg) translateY(60px);
   position: relative;
   z-index: 2;
-  padding: 5em 0;
 }
 
 .skewed-2 {
@@ -249,11 +282,11 @@ span {
   position: relative;
   z-index: 1;
   padding: 5em 0;
-  padding-top: 13em;
+  padding-top: 12em;
 }
 
 .skewed-3 {
-  padding-top: 0;
+  min-height: unset;
 }
 
 .skewed-3::before {
@@ -272,6 +305,14 @@ span {
 
 .container-skewed-2 {
   transform: skew(0deg, -5deg);
+}
+
+.description::before {
+  content: '';
+  width: 10px;
+  height: 100%;
+  border-radius: 5px;
+  background: var(--color-second);
 }
 
 .center {
