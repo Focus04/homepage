@@ -18,7 +18,7 @@ body {
 
 section {
   position: relative;
-  min-height: 100vh;
+  min-height: 110vh;
   display: grid;
   align-items: center;
 }
