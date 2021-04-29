@@ -6,7 +6,7 @@
   --color-second: #0b9d84;
   --color-second-light: #00ffd5;
   --color-second-dark: #2c7a6d;
-  --color-second-bg: #b7dbd5;
+  --color-second-bg: linear-gradient(to right top, #b7dbd5, #9ee5d8, #81eed9, #5bf7d8, #00ffd5);
 }
 
 body {
