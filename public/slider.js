@@ -35,19 +35,7 @@ const prevSlide = () => {
 const query = async () => {
   const response = await fetch('/api');
   const data = await response.json();
-  let playerList = '';
-  data.players.forEach((player) => {
-    const row = `
-      <tr>
-        <td>${player.raw.id}</td>
-        <td>${player.name}</td>
-        <td>${player.raw.score}</td>
-        <td>${player.raw.ping}</td>
-      </tr>
-    `;
-    playerList += row;
-  });
-  document.querySelector('.players').innerHTML = playerList;
+  return data;
 };
 
 let slideInterval;
@@ -74,14 +62,29 @@ circles.forEach((circle) => {
   });
 });
 slideInterval = setInterval(nextSlide, 10000);
-show.addEventListener('click', () => {
-  query();
+show.addEventListener('click', async () => {
+  const data = await query();
+  if (data.msg === 'Server is offline...') return alert(data.msg);
+  if (!data.players[0]) return alert('No player connected.');
+  let playerList = '';
+  data.players.forEach((player) => {
+    const row = `
+      <tr>
+        <td>${player.raw.id}</td>
+        <td>${player.name}</td>
+        <td>${player.raw.score}</td>
+        <td>${player.raw.ping}</td>
+      </tr>
+    `;
+    playerList += row;
+  });
+  document.querySelector('.players').innerHTML = playerList;
   const table = document.querySelector('.online-table');
   if (show.innerHTML === 'Show') {
-    table.style.display = 'block';
+    table.style.opacity = 1;
     show.innerHTML = 'Hide';
   } else {
-    table.style.display = 'none';
+    table.style.opacity = 0;
     show.innerHTML = 'Show';
   }
 });

@@ -45,7 +45,8 @@ button {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-  display: none;
+  opacity: 0;
+  transition: .4s;
 }
 
 thead {
@@ -339,6 +340,11 @@ span {
 }
 
 @media(max-width: 550px) {
+  th,
+  td {
+    padding: .2em;
+  }
+
   .showcase {
     height: 50vh;
   }
