@@ -1,7 +1,6 @@
 :root {
   --color-main: rgba(0, 0, 0, .9);
   --color-dark: #333333;
-  --color-grey: #e0e0e0;
   --color-light: #f4f4f4;
   --color-second: #0b9d84;
   --color-second-light: #00ffd5;
@@ -269,6 +268,46 @@ span {
 .server-info {
   display: grid;
   place-items: center;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 0;
+  display: none;
+  transition: .4s;
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--color-light);
+  margin: auto;
+  width: 70%;
+  box-shadow: 0 0 20px var(--color-main);
+  padding: 1em;
+  color: var(--color-second);
+  transform: translateY(-100px);
+  transition: .4s;
+}
+
+.close-btn {
+  font-size: 1.5em;
+  position: absolute;
+  top: .4em;
+  right: .4em;
+  cursor: pointer;
+  color: var(--color-second);
+  transition: .4s;
+}
+
+.close-btn:hover {
+  background: rgba(0, 255, 213, .1);
+  color: var(--color-dark);
 }
 
 .bg-light {
