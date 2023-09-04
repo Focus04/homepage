@@ -158,7 +158,7 @@ span {
 .container button {
   position: relative;
   z-index: 1;
-  padding: .5em;
+  padding: 1em;
   margin: 1rem;
   font-weight: 600;
   font-size: medium;
@@ -171,9 +171,15 @@ span {
   color: var(--color-second-dark);
 }
 
-.showcase button:hover {
+.showcase button {
   background: rgba(0, 255, 213, .1);
   color: var(--color-light);
+}
+
+.showcase button:hover {
+  background: rgba(0, 255, 213, .4);
+  color: var(--color-light);
+  border-color: var(--color-light);
 }
 
 .container button::after {
