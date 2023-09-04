@@ -150,7 +150,7 @@ span {
 .main-buttons {
   position: relative;
   z-index: 1;
-  margin-top: -120px;
+  margin-top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -330,13 +330,13 @@ span {
 }
 
 .skewed {
-  transform: skew(0deg, -5deg) translateY(60px);
+  transform: skew(0deg, -5deg) translateY(160px);
   position: relative;
   z-index: 2;
 }
 
 .skewed-2 {
-  transform: skew(0deg, 5deg) translateY(-60px);
+  transform: skew(0deg, 5deg) translateY(-30px);
   position: relative;
   z-index: 1;
   padding: 5em 0;
@@ -378,7 +378,7 @@ span {
   margin: auto;
 }
 
-@media(max-width: 550px) {
+@media(max-width: 800px) {
   th,
   td {
     padding: .2em;
