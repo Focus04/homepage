@@ -150,7 +150,6 @@ span {
 .main-buttons {
   position: relative;
   z-index: 1;
-  margin-top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -405,9 +404,5 @@ span {
 @media(max-width: 900px) {
   .content {
     width: 80%;
-  }
-
-  .main-buttons {
-    margin-top: -40px;
   }
 }
