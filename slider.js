@@ -99,13 +99,11 @@ show.addEventListener('click', async () => {
       return setTimeout(closeModal, 10000);
     }
     let playerList = '';
-    data.players.forEach((player) => {
+    data.forEach((player) => {
       const row = `
         <tr>
-          <td>${player.raw.id}</td>
-          <td>${player.name}</td>
-          <td>${player.raw.score}</td>
-          <td>${player.raw.ping}</td>
+          <td>${player.nickname}</td>
+          <td>${player.score}</td>
         </tr> 
       `;
       playerList += row;
