@@ -37,7 +37,7 @@ const prevSlide = () => {
 };
 
 const query = async () => {
-  const response = await fetch('https://dg-clan.com/api/players/?ip=51.178.185.229:7777');
+  const response = await fetch('/api');
   const data = await response.json();
   return data;
 };
@@ -99,12 +99,14 @@ show.addEventListener('click', async () => {
       return setTimeout(closeModal, 10000);
     }
     let playerList = '';
-    data.forEach((player) => {
+    data.players.forEach((player) => {
       const row = `
         <tr>
-          <td>${player.nickname}</td>
-          <td>${player.score}</td>
-        </tr> 
+          <td>${player.raw.id}</td>
+          <td>${player.name}</td>
+          <td>${player.raw.score}</td>
+          <td>${player.raw.ping}</td>
+        </tr>
       `;
       playerList += row;
     });
